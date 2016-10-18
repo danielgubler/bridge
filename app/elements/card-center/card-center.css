@@ -1,0 +1,10 @@
+card-center {
+  display: inline-block;
+  width: 80%;
+  margin: auto;
+}
+
+card-center .suit-display {
+  width: 100%;
+  vertical-align: bottom;
+}

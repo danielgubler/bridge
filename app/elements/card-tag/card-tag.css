@@ -1,0 +1,9 @@
+card-tag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+card-tag img {
+  width: 140%;
+}

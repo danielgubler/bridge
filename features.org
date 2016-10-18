@@ -1,0 +1,20 @@
+* General Features
+I want to be able to play a game from bidding to end and receive a point score
+I want to be corrected when I make an incorrect bid, and know the reason why
+I want to have the option of seeing all possible bids (if there's more than one) based on the protocol
+I want to be able to switch between different protocols (e.g. the American Standard vs the bridge club standard)
+I want to be quizzed on bidding without the need to play a full game, and without the randomness of a shuffled deck
+I want to be able to step through the protocol branches and be quizzed on what my opponent means, and, based on what I want to say, what I should bid. i.e. I want to test myself to see what I should bid, and I want to test to see if I know /why/ my opponent bid what he bid. (so the questions are basically reversed: meaning/bid)
+
+* UI
+I want to see what cards I have in an easy to digest order
+I want to see what tricks I've won/lost
+I want to see what all the players, including myself, have bid
+I want to see what players have played that trick and be prompted when the trick is over before the display clears for the next trick
+I want to see a list of bidding options, optionally filtered or highlighted by the appropriate bidding response based on my hand
+
+center-trick-display
+bid-display
+finished-tricks-display
+hand-display (for me and the dummy, the cards are face up, for the other players, the cards are face down)
+info-bar (for displaying bids you can/should make and the bid selection, along as what the trump suit is, and any other info)
