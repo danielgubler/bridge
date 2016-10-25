@@ -3,11 +3,13 @@ bridge-hand {
 
 bridge-hand .cards-display {
   position: relative;
+  display: inline-block;
 }
 
 bridge-hand playing-card {
-  position: absolute;
-  left: 0%;
+  margin-left: -75px;
+  display: inline-block;
+  position: relative;
   z-index: 1;
 }
 
