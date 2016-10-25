@@ -6,6 +6,18 @@
     <link rel="import" href="imports.html">
   </head>
   <body>
-    <bridge-hand></bridge-hand>
+    <div id="playing-field">
+      <div class="top-row">
+        <bridge-hand id="partner-hand"></bridge-hand>
+      </div>
+      <div class="center-row">
+        <bridge-hand id="opponent-left-hand" class="rotate90"></bridge-hand>
+        <trick-field></trick-field>
+        <bridge-hand id="opponent-right-hand" class="rotate90"></bridge-hand>
+      </div>
+      <div class="bottom-row">
+        <bridge-hand id="your-hand"></bridge-hand>
+      </div>
+    </div>
   </body>
 </html>
