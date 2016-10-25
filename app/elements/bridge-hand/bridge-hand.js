@@ -1,56 +1,40 @@
-Polymer({
-  is: 'bridge-hand',
-  properties: {
-    cards: Array,
-    faceUp: Boolean
-  },
-  observers: [
-    "_dealt(cards)",
-    "_reveal(faceUp)"
-  ],
+{
+  let id = "bridge-hand"
+  class BridgeHand extends HTMLElement {
+    createdCallback(){
+      this.innerHTML = document.customElementTemplates[id].innerHTML
+      this._cardsDisplay = d3.select(this.querySelector(".cards-display"))
+    }
 
-  ready: function() {
-    this._elementReady = true
-    this._populate()
-    this._dealt(this.cards)
-  },
+    get cards() { return this._cards || [] }
+    set cards(value) {
+      this._cards = value || []
+      this._update()
+    }
 
-  _dealt: function(cards) {
-    this._sort()
-    this._populate()
-  },
+    get faceUp() { return this._faceUp }
+    set faceUp(value) {
+      this._faceUp = value
+      this._update()
+    }
 
-  _reveal: function(faceUp) {
-    this._populate()
-  },
+    _update() {
+      let list = this._cardsDisplay.selectAll("playing-card").data(this.cards)
+      list.exit().remove()
+      list.enter().append(() => document.createElement("playing-card"))
 
-  _populate: function() {
-    if (!this._elementReady || !this.cards) { return }
-    let display = d3.select(this).select(".cards-display")
-    let list = display.selectAll("playing-card").data(this.cards)
-    list.exit().remove()
-    list.enter().append(() => {
-      let card = document.createElement("playing-card")
-      card.suit = "spades"
-      card.number = "ace"
-      card.faceUp = true
-      return card
-    })
-
-    // list.attr("suit", c => c.suit)
-    // list.attr("number", c => c.number)
-    // list.attr("face-up", c => this.faceUp)
-  },
-
-  // _addCard(suit, number) {
-  //   let card = document.createElement("playing-card")
-  //   this.querySelector(".cards-display").append(card)
-  //   card.suit = suit
-  //   card.number = number
-  //   card.faceUp = true
-  // },
-
-  _sort: function() {
-
+      list.each((data, idx) => {
+        let card = list[0][idx]
+        card.suit = data.suit
+        card.number = data.number
+        card.faceUp = this.faceUp
+        card.style.left = (25*idx) + "px"
+        card.style.zIndex = idx + 1
+      })
+    }
   }
-})
+
+  document.customElementTemplates = document.customElementTemplates || {}
+  document.customElementTemplates[id] = document.currentScript.ownerDocument.querySelector("template")
+  document.registerElement(id, BridgeHand)
+}

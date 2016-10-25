@@ -1,31 +1,24 @@
+let id = "demo-element"
 class DemoElement extends HTMLElement {
   createdCallback(){
-    this.innerHTML = document.currentScript.ownerDocument.querySelector("template").innerHTML
+    this.innerHTML = document.customElementTemplates[id].innerHTML
     this._title = this.querySelector('h1')
-    // var spn = this.querySelector('span');
-    // var btn = this.querySelector('button');
-    // btn.addEventListener('click',() => alert('The button '+btn.textContent+' had been clicked'));
   }
 
-  attachedCallback(){
-    // this.querySelector('#spn').innerHTML = this.btntext != null ? this.btntext : this.dataset['text'];
-    // this.querySelector('#btn').textContent = this.btntext != null ? this.btntext : this.dataset['text'];
+  detachedCallback() { this._observer.disconnect() }
+  attachedCallback() {
+    this._observer = new MutationObserver((mutationRecords, observer) => { this._updateProperties() })
+    this._observer.observe(this, { "attributes": true })
   }
 
-  // set properties(prop) {
-  //   this.btntext = prop.text;
-  // }
-
-  get text() {
-    return this._title.innerText
+  _updateProperties() {
+    this.title = this.getAttribute("title")
   }
 
-  set text(value) {
-    this._title.innerText = value
-  }
+  get title() { return this._title.innerText }
+  set title(value) { this._title.innerText = value }
 }
 
-var Demo = document.registerElement("demo-element", DemoElement);
-
-var myBtn = new Demo;
-document.body.appendChild(myBtn);
+document.customElementTemplates = document.customElementTemplates || {}
+document.customElementTemplates[id] = document.currentScript.ownerDocument.querySelector("template")
+document.registerElement(id, DemoElement);

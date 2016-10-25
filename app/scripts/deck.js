@@ -65,6 +65,7 @@ class Deck {
   shuffle() {
     for (let i = 0; i < this._cards.length; i++) {
       var newIndex = Math.floor(Math.random() * this._cards.length)
+
       let swapped = this._cards[i]
       this._cards[i] = this._cards[newIndex]
       this._cards[newIndex] = swapped

@@ -1,2 +1,16 @@
 bridge-hand {
 }
+
+bridge-hand .cards-display {
+  position: relative;
+}
+
+bridge-hand playing-card {
+  position: absolute;
+  left: 0%;
+  z-index: 1;
+}
+
+bridge-hand playing-card:hover {
+  z-index: 999 !important;
+}
