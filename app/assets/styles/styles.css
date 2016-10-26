@@ -4,7 +4,10 @@
 }
 
 body {
-  background-color: #101000; /* #fbe4ba; */
+  background-color: #131b16;
+  color: #a8b1a4;
+  font-family: "Gotham-Book", sans-serif;
+  font-weight: 100;
 }
 
 .hidden {
@@ -41,10 +44,6 @@ body {
   display: flex;
 }
 
-#info-bar {
-  width: 380px;
-}
-
 #playing-field {
   flex: 1;
   display: flex;
@@ -74,29 +73,3 @@ trick-field {
   flex: 1;
   width: 100%;
 }
-
-/* #opponent-left-hand, trick-field, #opponent-right-hand { */
-/*   display: inline-block; */
-/* } */
-
-/* #playing-field { */
-/*   width: 100vw; */
-/*   height: 100vh; */
-/*   display: flex; */
-/*   flex-direction: column; */
-/*   align-items: stretch; */
-/* } */
-
-/* trick-field { */
-/*   flex: 1; */
-/* } */
-
-/* .center-row { */
-/*   flex: 1; */
-/*   display: flex; */
-/*   align-items: center; */
-/* } */
-
-/* .bottom-row, .top-row { */
-/*   text-align: center; */
-/* } */
