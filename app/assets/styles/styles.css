@@ -35,28 +35,68 @@ body {
   transform: rotate(270deg);
 }
 
-#opponent-left-hand, trick-field, #opponent-right-hand {
-  display: inline-block;
-}
-
-#playing-field {
+#game-table {
   width: 100vw;
   height: 100vh;
   display: flex;
+}
+
+#info-bar {
+  width: 380px;
+}
+
+#playing-field {
+  flex: 1;
+  display: flex;
+}
+
+#table-left, #table-right {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+}
+
+#table-left bridge-hand, #table-right bridge-hand {
+  position: absolute;
+  display: inline-block;
+}
+
+#table-center {
+  flex: 1;
+  display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
 }
 
 trick-field {
   flex: 1;
+  width: 100%;
 }
 
-.center-row {
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
+/* #opponent-left-hand, trick-field, #opponent-right-hand { */
+/*   display: inline-block; */
+/* } */
 
-.bottom-row, .top-row {
-  text-align: center;
-}
+/* #playing-field { */
+/*   width: 100vw; */
+/*   height: 100vh; */
+/*   display: flex; */
+/*   flex-direction: column; */
+/*   align-items: stretch; */
+/* } */
+
+/* trick-field { */
+/*   flex: 1; */
+/* } */
+
+/* .center-row { */
+/*   flex: 1; */
+/*   display: flex; */
+/*   align-items: center; */
+/* } */
+
+/* .bottom-row, .top-row { */
+/*   text-align: center; */
+/* } */

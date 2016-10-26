@@ -1,4 +1,6 @@
 bridge-hand {
+  text-align: center;
+  width: 450px;
 }
 
 bridge-hand .cards-display {
