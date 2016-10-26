@@ -28,13 +28,6 @@
       this._update()
     }
 
-    // setAttribute(attr, value) {
-    //   super.setAttribute(attr, value)
-    //   if (attr == "suit") { this.suit = value }
-    //   else if (attr == "number") { this.number = value }
-    //   else if (attr == "face-up") { this.faceUp = value == "true" }
-    // }
-
     _update() {
       let faceUp = this.faceUp && this.number && this.suit
 
