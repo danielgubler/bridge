@@ -9,6 +9,13 @@ trump-display {
   height: 80px;
 }
 
+trump-display .no-trump {
+  font-size: 42px;
+  font-family: "Gotham-ExtraLight";
+  margin: auto;
+  color: #101000;
+}
+
 trump-display img {
   margin: auto;
   height: 80%;

@@ -69,6 +69,9 @@
             img.src = `/assets/images/${suit}_icon.png`
           }
 
+          tag.onclick = () => {
+            EventBus.fire("bid_selected", `${level}_${suit}`)
+          }
 
           tag.style.zIndex = SuitValues[suit] + 1
         })
