@@ -1,0 +1,15 @@
+trump-display {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+trump-display img {
+  margin: auto;
+  height: 80%;
+}
